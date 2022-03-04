@@ -9,15 +9,17 @@ const generateClassName = createGenerateClassName({
     productionPrefix: 'ma',
 })
 
-export default () =>{
-    return <div>
-        <StylesProvider>
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path="/pricing" component={Pricing} />
-                    <Route path="/" component={Landing} />
-                </Switch>
-            </BrowserRouter>
-        </StylesProvider>
-    </div>
+export default () => {
+    return (
+        <div>
+            <StylesProvider generateClassName={generateClassName}>
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path="/pricing" component={Pricing} />
+                        <Route path="/" component={Landing} />
+                    </Switch>
+                </BrowserRouter>
+            </StylesProvider>
+        </div>
+    );
 }
